@@ -1,0 +1,347 @@
+:root {
+    --yellow: #10e0c5;
+    --green: #1bb876;
+    --dark-green: #acd31f;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: var(--green);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1s ease-out;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    animation: bounce 2s infinite;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background: var(--yellow);
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Présentation */
+.presentation {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fffbe6;
+}
+
+.presentation h2 {
+    color: var(--green);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(90deg, var(--yellow), var(--green));
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade 1.5s forwards;
+}
+
+.delay1 { animation-delay: .5s; }
+.delay2 { animation-delay: 1s; }
+.delay3 { animation-delay: 1.5s; }
+.delay4 { animation-delay: 2s; }
+.delay5 { animation-delay: 2.5s; }
+.delay6 { animation-delay: 3s; }
+.delay7 { animation-delay: 3.5s; }
+.delay8 { animation-delay: 4s; }
+
+/* Produits */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.product-card {
+    display: inline-block;
+    background: var(--yellow);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform .4s, box-shadow .4s;
+    cursor: pointer;
+    opacity: 0;
+    animation: popIn 1s forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* Images */
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform .3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Paiement */
+.payments {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Contact */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--green);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fade {
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.presentation-text {
+    max-width: 800px;
+    background: linear-gradient(135deg, #0bbdb4cc, #e96011cc);
+    padding: 25px;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    animation: fadeUp 1s ease-out;
+}
+
+.presentation-text h2 {
+    color: #228b22;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(212, 229, 230, 0.2);
+}
+
+.presentation-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    animation: fadeInText 1.4s ease;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.cart-box {
+    background: linear-gradient(135deg, #ffffffdd, #f0ffe4dd);
+    border: 2px solid #32cd32;
+    padding: 20px;
+    border-radius: 15px;
+    width: 260px;
+    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
+    animation: cartPop 1s ease-out;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cart-box h3 {
+    color: #228b22;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.cart-box p {
+    color: #333;
+    opacity: 0.9;
+}
+
+.cart-btn {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #32cd32;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cart-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.25);
+}
+
+/* Animation */
+@keyframes cartPop {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.payment-box {
+    background: linear-gradient(135deg, #fffbe0dd, #e6ffdd);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+    width: 300px;
+    text-align: center;
+    margin: 30px auto;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.payment-box h3 {
+    color: #228b22;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffffdd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 5px 15px rgba(0, 100, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.payment-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 100, 0, 0.2);
+}
+
+.payment-method img {
+    width: 45px;
+    height: auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn-primary {
+    background: #003087; /* bleu PayPal */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
